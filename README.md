@@ -12,10 +12,10 @@ docker build --tag "azp-agent:linux" --file "./azp-agent-linux.dockerfile" .
 
 How to run the agent
 
-docker run -d -e AZP_URL="https://dev.azure.com/aseaudi" -e AZP_TOKEN="<PERSONAL TOKEN>" --name "azp-agent-linux" azp-agent:linux
+docker run -d -e AZP_URL="https://dev.azure.com/aseaudi" -e AZP_TOKEN="<PERSONAL TOKEN>" -e AZP_AGENT_NAME="Docker Agent - Linux" --name "azp-agent-linux" azp-agent:linux
 
-Go to your organization in dev.azure.com, then Project Settings, Agent Pools, Default, you should find your docker agent online
+Go to your organization in dev.azure.com, then Project Settings, Agent Pools, Default, you should find your docker agent online.
 
-Use the name of the agent in your azure pipelines yaml file
+Use the name of the agent, e.g. "Docker Agent - Linux", in your azure pipelines yaml file
 
 
