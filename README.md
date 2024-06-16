@@ -6,13 +6,17 @@ This project has a self hosted azure agent docker, which supports the following 
 * Terraform
 * Docker-in-Docker for building images
 
-How to build the docker image for the azure agent
+To build the docker image for the azure agent:
 
+```
 docker build --tag "azp-agent:linux" --file "./azp-agent-linux.dockerfile" .
+```
 
-How to run the agent
+To run the azure agent:
 
+```
 docker run -d -e AZP_URL="https://dev.azure.com/aseaudi" -e AZP_TOKEN="<PERSONAL TOKEN>" -e AZP_AGENT_NAME="Docker Agent - Linux" --name "azp-agent-linux" azp-agent:linux
+```
 
 Go to your organization in dev.azure.com, then Project Settings, Agent Pools, Default, you should find your docker agent online.
 
