@@ -27,7 +27,9 @@ RUN apt install -y terraform
 
 RUN curl https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz | tar xvz -C /tmp/ && mv /tmp/docker/docker /usr/bin/docker
 
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && mv kubectl /usr/local/bin/ && chmod +x /usr/local/bin/kubectl
 
+RUN curl https://get.helm.sh/helm-v3.15.2-linux-amd64.tar.gz | tar xvz -C /tmp/ && mv /tmp/linux-amd64/helm /usr/local/bin/helm && chmod +x /usr/local/bin/helm
 WORKDIR /azp/
 
 COPY ./start.sh ./
